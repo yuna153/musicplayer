@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Music</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <div class="app">
+
+            <!-- 左 -->
+            <div class="sidebar">
+                <h2>🎧 Music</h2>
+                <ul id="playlist">
+                    <li onclick="playSong(0)">Aries(白羊座)</li>  <!-- JS 裡的 songs 陣列 -->
+                    <li onclick="playSong(1)">INFJ-A</li>
+                    <li onclick="playSong(2)">Morning Coffee</li>
+                    <li onclick="playSong(3)">I Want You</li>
+                    <li onclick="playSong(4)">All For You</li>
+                    <li onclick="playSong(5)">All The Time</li>
+                </ul>
+            </div>
+
+            <!-- 右 -->
+            <div class="main">
+                <div class="player-card">
+                    <img id="cover" src="images/music.jpg" />
+                    <h2 id="title">Music</h2>
+
+                    <audio id="audio"></audio>  <!-- 由 JS 控制 撥放/暫停 -->
+                    <button onclick="togglePlay()" class="play-btn">▶</button>  <!-- 點擊會呼叫 JS 裡 togglePlay() -->
+
+                    <!-- 時間軸 點擊時間進度條 -->
+                    <div class="progress-container" onclick="setProgress(event)">
+                        <div class="progress" id="progress"></div>
+                    </div>
+
+                    <!-- 時間軸顯示 -->
+                    <div class="time">
+                        <span id="current">0:00</span>
+                        <span id="duration">0:00</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+       
+
+        <script src="script.js"></script>  <!-- 載入外部的JS -->
+
+    </body>
+</html>
